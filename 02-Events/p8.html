@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Event Handling</title>
+</head>
+<body>
+    <center>
+        <h1>Media Event</h1>
+    </center>
+
+    <h3 id="output"></h3>
+    <video id="video" autoplay controls height="300px" width="500px">
+        <source src="assets/event.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        const video = document.getElementById("video");
+        const output = document.getElementById("output");
+
+        video.addEventListener("pause", () => {
+            output.textContent = "Video paused";
+        });
+
+        video.addEventListener("play", () => {
+            output.textContent = "Video played";
+        });
+
+        video.addEventListener("volumechange", () => {
+            output.textContent = "Volume changed";
+        });
+
+        video.addEventListener("seeking", () => {
+            output.textContent = "Seeking...";
+        });
+
+        video.addEventListener("change", () => {
+            output.textContent = "Video source changed";
+        });
+    </script>
+</body>
+</html>
