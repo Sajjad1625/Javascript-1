@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+</head>
+<body>
+    <form onsubmit="validateForm(event)">
+        <label>Enter User Password:</label>
+        <input type="password" placeholder="Password" name="password" id="password">
+        <strong id="error"></strong>
+        <button type="submit">SUBMIT USER</button>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+
+            let passwordInput = document.getElementById("password").value;
+            let errorElement = document.getElementById("error");
+            
+            
+            const minLength = 8;
+            
+            if (passwordInput.length >= minLength) {
+                errorElement.innerHTML = ""; 
+                alert("Password is valid!");
+            } else {
+                errorElement.innerHTML = "Password must be at least " + minLength + " characters long.";
+            }
+        }
+    </script>
+</body>
+</html>

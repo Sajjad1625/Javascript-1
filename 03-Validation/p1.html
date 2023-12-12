@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Validation</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Username Validation</title>
+    </head>
+    <body>
+        <center>
+            <h1>USERNAME VALIDATION</h1>
+        </center>
+        <hr>
+    
+        <form onsubmit="validateForm(event)">
+            <label>Enter User Name:</label>
+            <input type="text" placeholder="User Name" name="userName" id="userName">
+            <strong id="error"></strong>
+            <button type="submit">SUBMIT USER</button>
+        </form>
+    
+        <script>
+            function validateForm(event) {
+                event.preventDefault();
+    
+                let userName = document.getElementById("userName").value;
+    
+                if (userName.length == 0) {
+                    document.getElementById("error").innerHTML = "Please enter user name";
+                    document.getElementById("error").style.color = "red";
+                } else if (userName.length < 5) {
+                    document.getElementById("error").innerHTML = "Enter Valid user name";
+                    document.getElementById("error").style.color = "red";
+                } else {
+                    document.getElementById("error").innerHTML = "valid user name";
+                    document.getElementById("error").style.color = "green";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
+</body>
+</html>
