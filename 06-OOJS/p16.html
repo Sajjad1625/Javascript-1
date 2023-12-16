@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+    <script>
+        var user = {};
+        Object.defineProperties(user, {
+            name: {
+                value: "Raju",
+                writable: true
+            },
+            email: {
+                value: 'raju@gmail.com',
+                writable: false
+            },
+            mobile: {
+                value: '96543278',
+                writable: true
+            }
+        });
+        console.log('before user =', user);
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Write protect the values</h1>
+    </center>
+    <hr>
+    <h1>name = <span id="namePlaceholder"></span></h1>
+    <h1>email = <span id="emailPlaceholder"></span></h1>
+    <h1>mobile = <span id="mobilePlaceholder"></span></h1>
+
+    <script>
+        document.getElementById('namePlaceholder').textContent = user.name;
+        document.getElementById('emailPlaceholder').textContent = user.email;
+        document.getElementById('mobilePlaceholder').textContent = user.mobile;
+    </script>
+</body>
+</html>

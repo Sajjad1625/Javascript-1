@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+    <style>
+   
+    table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 20px;
+        border: 2px solid #333;
+    }
+
+ 
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: left;
+        padding: 8px;
+    }
+
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+
+    td {
+        padding: 8px;
+        border: 1px solid #dddddd;
+    }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="data-table"></tbody>
+    </table>
+
+    <script>
+        const users = [
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            {
+                name: "Raj",
+                email: "rej@gmail.com",
+                mobile: "9988992222",
+                age: 25
+            },
+            
+        ];
+
+       
+        function createTableRow(key, value) {
+            const row = document.createElement("tr");
+            const keyCell = document.createElement("td");
+            const valueCell = document.createElement("td");
+
+            keyCell.textContent = key;
+            valueCell.textContent = value;
+
+            row.appendChild(keyCell);
+            row.appendChild(valueCell);
+
+            return row;
+        }
+
+        
+        function populateTable(data) {
+            const tableBody = document.getElementById("data-table");
+
+            data.forEach((user) => {
+                for (const key in user) {
+                    const row = createTableRow(key, user[key]);
+                    tableBody.appendChild(row);
+                }
+            });
+        }
+
+      
+        populateTable(users);
+    </script>
+</body>
+</html>

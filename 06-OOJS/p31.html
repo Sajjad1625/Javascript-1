@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Class ES-6</h1>
+        <p>Finding Even Odd using Class</p>
+    </div>
+    <hr>
+    <form>
+        <label for="number">Enter Number</label>
+        <input type="number" name="number" id="number"><br>
+        <button type="button" id="submit">Submit</button>
+        <hr>
+        <h1 id="result"></h1>
+    </form>
+    <hr>
+    <script>
+        class EvenOdd { 
+            constructor() {
+                this.initialize();
+            }
+            isEven(num) {
+                return num % 2 == 0;
+            }
+
+            isOdd(num) {
+                return num % 2 !== 0;
+            }
+
+            initialize() {
+                const submitButton = document.getElementById('submit');
+                const resultElement = document.getElementById('result');
+                
+                submitButton.addEventListener('click', () => {
+                    const inputNumber = parseInt(document.getElementById('number').value);
+
+                    if (!isNaN(inputNumber)) {
+                        const numberChecker = new EvenOdd(inputNumber);
+                        if (numberChecker.isEven()) {
+                            resultElement.textContent = 'The number is even.';
+                        } else if (numberChecker.isOdd()) {
+                            resultElement.textContent = 'The number is odd.';
+                        }
+                    } else {
+                        resultElement.textContent = 'Please enter a valid number.';
+                    }
+                });
+            }
+
+           
+        }
+
+        new EvenOdd(); 
+    </script>
+</body>
+</html>

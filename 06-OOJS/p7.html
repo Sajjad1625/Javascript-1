@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+<body>
+    <center>
+        <h1>Object method</h1>
+    </center>
+
+    <script>
+         const user = {
+            name: "Raj",
+            email: "rej@gmail.com",
+            mobile: "9988992222",
+            age: 25
+        };
+
+        const user1 = Object.create(user);
+        console.log('typeof(user1) :', typeof(user1));
+
+        console.log('before set user1 =', user1);
+
+        let emp = {
+            bank:"SBI",
+            acc: 122323,
+            total: 1230
+        };
+
+        Object.setPrototypeOf(user, emp);
+        console.log('typeof(user):', typeof(user1));
+        console.log('After set user1 = ', user1);
+    </script>
+</body>
+</html>
