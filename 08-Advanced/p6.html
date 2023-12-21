@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVANCED</title>
+</head>
+<body>
+    <center>
+        <h1>addEventListner METHOD</h1>
+        <p>This method is used for manages one or more than one event.</p>
+    </center>
+    <hr>
+
+    <button type="button" onclick="firstFunction()">Function 1</button>
+    <button type="button" onclick="secondFunction()">Function 2</button>
+
+    <button type="button" id="btn1">Without Event Listner</button>
+    <button type="button" id="btn2">With Event Listner</button>
+    <script>
+        function firstFunction(){
+            alert("You clicked Function 1");
+        }
+
+        function secondFunction(){
+            alert("Second Function");
+        }
+
+        let btn1 = document.getElementById('btn1');
+        btn1.onclick = firstFunction;
+        btn2.onclick = secondFunction;
+
+        let btn2 = document.getElementById('btn2');
+               btn1.addEventListener('click', firstFunction); // This will not work because addEventListener() takes two parameters and we are passing only one parameter here.
+               btn2.addEventListener('click', secondFunction); // This will not work because addEventListener() takes two parameters and we are passing only one parameter here.
+    </script>
+</body>
+</html>

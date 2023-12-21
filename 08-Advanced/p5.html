@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Generator Function</h1>
+    </center>
+    <p>8) Generator Function = function* A(){yeild "A"; yeild "B"}</p>
+
+    <script>
+        function A(){
+            let a = 10, b = 20, sum;
+            sum = a + b;
+
+            return sum;
+            console.log(sum);
+        }
+        document.write(A());
+
+        function* user(){
+
+        // yeild is kind of like return
+        // return x returns the value of x, but yeild x returns a function,
+
+        yield"Raju";
+        yield"mahesh";
+        yield"Ranjitha";
+        yield"savitha";
+        yield"venkatesh";
+        }
+
+        console.log('USER FUNCTION =', user())
+        console.log('USER TYPEOF =', typeof(user()))
+        for(let item of user ()){
+            document.write(`<h3>${item}</h3>`);
+        }
+    </script>
+</body>
+</html>
